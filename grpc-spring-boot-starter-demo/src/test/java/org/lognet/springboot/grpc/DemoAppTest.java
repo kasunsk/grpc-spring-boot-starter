@@ -63,7 +63,7 @@ public class DemoAppTest extends GrpcServerTestBase{
     public void interceptorsTest() throws ExecutionException, InterruptedException {
 
         GreeterGrpc.newFutureStub(channel)
-                .sayHello(GreeterOuterClass.HelloRequest.newBuilder().setName("name").build())
+                .sayHello(GreeterOuterClass.HelloRequest.newBuilder().setName("Kasun Kariyawasam").build())
                 .get().getMessage();
 
         CalculatorGrpc.newFutureStub(channel)

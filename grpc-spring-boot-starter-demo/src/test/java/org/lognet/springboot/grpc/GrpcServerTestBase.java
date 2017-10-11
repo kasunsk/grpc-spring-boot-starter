@@ -2,6 +2,8 @@ package org.lognet.springboot.grpc;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.examples.CalculatorGrpc;
+import io.grpc.examples.CalculatorOuterClass;
 import io.grpc.examples.GreeterGrpc;
 import io.grpc.examples.GreeterOuterClass;
 import io.grpc.inprocess.InProcessChannelBuilder;
@@ -17,6 +19,7 @@ import org.springframework.util.StringUtils;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -71,10 +74,22 @@ public abstract class GrpcServerTestBase {
     }
 
     @Test
+    public void simpleCalculating() throws ExecutionException, InterruptedException {
+
+        final CalculatorGrpc.CalculatorFutureStub calculatorFutureStub = CalculatorGrpc.newFutureStub(Optional.ofNullable(channel).orElse(inProcChannel));
+        final CalculatorOuterClass.CalculatorRequest request = CalculatorOuterClass.CalculatorRequest.newBuilder().setNumber1(20).setNumber2(15)
+                .setOperation(CalculatorOuterClass.CalculatorRequest.OperationType.SUBTRACT).build();
+        final Double answer = calculatorFutureStub.calculate(request).get().getResult();
+        System.out.println("Congratulation!!! It Works.");
+        System.out.println("Answer is : " + answer);
+        assertEquals(5, answer.intValue());
+    }
+
+    @Test
     public void simpleGreeting() throws ExecutionException, InterruptedException {
 
 
-        String name ="John";
+        String name ="Kasun";
         final GreeterGrpc.GreeterFutureStub greeterFutureStub = GreeterGrpc.newFutureStub(Optional.ofNullable(channel).orElse(inProcChannel));
         final GreeterOuterClass.HelloRequest helloRequest =GreeterOuterClass.HelloRequest.newBuilder().setName(name).build();
         final String reply = greeterFutureStub.sayHello(helloRequest).get().getMessage();
