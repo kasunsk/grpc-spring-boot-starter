@@ -59,6 +59,7 @@ public class DemoAppTest extends GrpcServerTestBase{
 
     }
 
+    @Ignore
     @Test
     public void interceptorsTest() throws ExecutionException, InterruptedException {
 

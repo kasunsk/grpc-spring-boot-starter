@@ -12,7 +12,8 @@ public class NotSpringBeanInterceptor implements ServerInterceptor {
     @Override
     public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(ServerCall<ReqT, RespT> call, Metadata headers,
                                                                  ServerCallHandler<ReqT, RespT> next) {
-        System.out.println("I'm not Spring bean interceptor and still being invoked...");
+        //System.out.println("I'm not Spring bean interceptor and still being invoked...");
+        System.out.println("Invoked on the server!!!");
         return next.startCall(call, headers);
     }
 }
