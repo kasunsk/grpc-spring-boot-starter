@@ -14,7 +14,6 @@ import io.grpc.examples.GreeterOuterClass;
 import io.grpc.stub.StreamObserver;
 
 
-@Slf4j
 @GRpcService(interceptors = { LogInterceptor.class })
 public class GreeterService extends GreeterGrpc.GreeterImplBase {
 

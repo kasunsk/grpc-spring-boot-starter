@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 /**
  * Created by jamessmith on 9/7/16.
  */
-@Slf4j
 @Component
 public class LogInterceptor implements ServerInterceptor {
 

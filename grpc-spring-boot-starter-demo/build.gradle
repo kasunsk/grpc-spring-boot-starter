@@ -5,7 +5,7 @@ dependencies {
 
     compile "org.springframework.boot:spring-boot-starter-actuator"
     compile 'org.springframework.boot:spring-boot-starter-web'
-
+    compile 'org.modelmapper:modelmapper:0.7.5'
 
     compile project(':grpc-spring-boot-starter')
 
