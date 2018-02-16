@@ -17,7 +17,7 @@ import io.grpc.stub.StreamObserver;
 @GRpcService(interceptors = { LogInterceptor.class })
 public class GreeterService extends GreeterGrpc.GreeterImplBase {
 
-    Logger log = LoggerFactory.getLogger(GreeterService.class);
+    private Logger log = LoggerFactory.getLogger(GreeterService.class);
 
     @Override
     public void sayHello(GreeterOuterClass.HelloRequest request, StreamObserver<GreeterOuterClass.HelloReply> responseObserver) {

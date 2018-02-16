@@ -10,7 +10,7 @@ import io.grpc.health.v1.HealthCheckResponse;
 import io.grpc.health.v1.HealthGrpc;
 import org.junit.*;
 import org.junit.runner.RunWith;
-import org.lognet.springboot.grpc.demo.DemoApp;
+import org.lognet.springboot.grpc.demo.CalculateService;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -32,8 +32,8 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
  * Created by alexf on 28-Jan-16.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {DemoApp.class,TestConfig.class}, webEnvironment = DEFINED_PORT)
-public class DemoAppTest extends GrpcServerTestBase{
+@SpringBootTest(classes = {CalculateService.class,TestConfig.class}, webEnvironment = DEFINED_PORT)
+public class CalculateServiceTest extends GrpcServerTestBase{
 
 
 

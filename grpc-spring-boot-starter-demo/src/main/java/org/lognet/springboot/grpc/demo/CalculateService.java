@@ -17,7 +17,7 @@ import io.grpc.stub.StreamObserver;
  */
 
 @GRpcService(interceptors = NotSpringBeanInterceptor.class)
-public class DemoApp extends CalculatorGrpc.CalculatorImplBase {
+public class CalculateService extends CalculatorGrpc.CalculatorImplBase {
 
     @Override
     public void calculate(CalculatorOuterClass.CalculatorRequest request, StreamObserver<CalculatorOuterClass.CalculatorResponse> responseObserver) {
@@ -54,7 +54,4 @@ public class DemoApp extends CalculatorGrpc.CalculatorImplBase {
 
 }
 
-//    public static void main(String[] args) {
-//        SpringApplication.run(CalculatorService.class,args);
-//    }
 

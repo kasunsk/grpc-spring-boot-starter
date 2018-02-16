@@ -7,7 +7,7 @@ import io.grpc.examples.CalculatorOuterClass;
 import org.hamcrest.CoreMatchers;
 import org.junit.*;
 import org.junit.runner.RunWith;
-import org.lognet.springboot.grpc.demo.DemoApp;
+import org.lognet.springboot.grpc.demo.CalculateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.rule.OutputCapture;
@@ -23,7 +23,7 @@ import static org.lognet.springboot.grpc.TestConfig.CUSTOM_EXECUTOR_MESSAGE;
  * Created by 310242212 on 21-Dec-16.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {DemoApp.class,TestConfig.class},
+@SpringBootTest(classes = {CalculateService.class,TestConfig.class},
         webEnvironment = SpringBootTest.WebEnvironment.NONE
         ,properties = "grpc.port=7777")
 @ActiveProfiles(profiles = {"customServerBuilder"})

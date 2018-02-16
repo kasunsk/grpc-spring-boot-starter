@@ -5,7 +5,7 @@ import io.grpc.ServerCall.Listener;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.lognet.springboot.grpc.OrderedInterceptorsTest.TheConfiguration;
-import org.lognet.springboot.grpc.demo.DemoApp;
+import org.lognet.springboot.grpc.demo.CalculateService;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Created by 310242212 on 11-Sep-16.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {DemoApp.class, TheConfiguration.class},
+@SpringBootTest(classes = {CalculateService.class, TheConfiguration.class},
     webEnvironment = WebEnvironment.NONE, properties = "grpc.port=7778")
 public class OrderedInterceptorsTest extends GrpcServerTestBase{
 
