@@ -39,13 +39,13 @@ public class CalculateService extends CalculatorGrpc.CalculatorImplBase {
                 break;
         }
 
-        try {
-            System.out.println("Sleeping for 10 sec");
-            Thread.sleep(10000);
-            System.out.println("Finished");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            System.out.println("Sleeping for 10 sec");
+//            Thread.sleep(10000);
+//            System.out.println("Finished");
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
         responseObserver.onNext(resultBuilder.build());
         responseObserver.onCompleted();
