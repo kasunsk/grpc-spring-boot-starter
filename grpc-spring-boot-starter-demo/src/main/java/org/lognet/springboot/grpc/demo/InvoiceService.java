@@ -1,6 +1,5 @@
 package org.lognet.springboot.grpc.demo;
 
-import io.grpc.examples.GreeterOuterClass;
 import io.grpc.examples.InvoiceGrpc;
 import io.grpc.examples.InvoiceOuterClass;
 import io.grpc.stub.StreamObserver;

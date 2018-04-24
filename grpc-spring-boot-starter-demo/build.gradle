@@ -1,5 +1,14 @@
 apply plugin: 'com.google.protobuf'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
+
+
+jar {
+    baseName = 'primelog-grpc-server'
+    version =  '1.0'
+}
+
+group = 'kasunsk'
 
 dependencies {
 
@@ -52,6 +61,18 @@ task cleanProtoGen{
            delete("$projectDir/src/main/protoGen")
     }
 }
+
+task buildDocker(type: Docker, dependsOn: build) {
+    applicationName = jar.baseName
+    dockerfile = file('Dockerfile')
+    doFirst {
+        copy {
+            from jar
+            into "${stageDir}/target"
+        }
+    }
+}
+
 clean.dependsOn cleanProtoGen
 
 dependencyManagement {

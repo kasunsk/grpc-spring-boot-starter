@@ -19,165 +19,165 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.6.1)",
-    comments = "Source: calculator.proto")
-public final class CalculatorGrpc {
+    comments = "Source: invoice.proto")
+public final class InvoiceGrpc {
 
-  private CalculatorGrpc() {}
+  private InvoiceGrpc() {}
 
-  public static final String SERVICE_NAME = "Calculator";
+  public static final String SERVICE_NAME = "Invoice";
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<io.grpc.examples.CalculatorOuterClass.CalculatorRequest,
-      io.grpc.examples.CalculatorOuterClass.CalculatorResponse> METHOD_CALCULATE =
-      io.grpc.MethodDescriptor.<io.grpc.examples.CalculatorOuterClass.CalculatorRequest, io.grpc.examples.CalculatorOuterClass.CalculatorResponse>newBuilder()
+  public static final io.grpc.MethodDescriptor<io.grpc.examples.InvoiceOuterClass.InvoiceRequest,
+      io.grpc.examples.InvoiceOuterClass.InvoiceResponse> METHOD_ISSUE_INVOICE =
+      io.grpc.MethodDescriptor.<io.grpc.examples.InvoiceOuterClass.InvoiceRequest, io.grpc.examples.InvoiceOuterClass.InvoiceResponse>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
-              "Calculator", "calculate"))
+              "Invoice", "issueInvoice"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              io.grpc.examples.CalculatorOuterClass.CalculatorRequest.getDefaultInstance()))
+              io.grpc.examples.InvoiceOuterClass.InvoiceRequest.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              io.grpc.examples.CalculatorOuterClass.CalculatorResponse.getDefaultInstance()))
+              io.grpc.examples.InvoiceOuterClass.InvoiceResponse.getDefaultInstance()))
           .build();
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static CalculatorStub newStub(io.grpc.Channel channel) {
-    return new CalculatorStub(channel);
+  public static InvoiceStub newStub(io.grpc.Channel channel) {
+    return new InvoiceStub(channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static CalculatorBlockingStub newBlockingStub(
+  public static InvoiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new CalculatorBlockingStub(channel);
+    return new InvoiceBlockingStub(channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static CalculatorFutureStub newFutureStub(
+  public static InvoiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new CalculatorFutureStub(channel);
+    return new InvoiceFutureStub(channel);
   }
 
   /**
    */
-  public static abstract class CalculatorImplBase implements io.grpc.BindableService {
+  public static abstract class InvoiceImplBase implements io.grpc.BindableService {
 
     /**
      */
-    public void calculate(io.grpc.examples.CalculatorOuterClass.CalculatorRequest request,
-        io.grpc.stub.StreamObserver<io.grpc.examples.CalculatorOuterClass.CalculatorResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_CALCULATE, responseObserver);
+    public void issueInvoice(io.grpc.examples.InvoiceOuterClass.InvoiceRequest request,
+        io.grpc.stub.StreamObserver<io.grpc.examples.InvoiceOuterClass.InvoiceResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_ISSUE_INVOICE, responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            METHOD_CALCULATE,
+            METHOD_ISSUE_INVOICE,
             asyncUnaryCall(
               new MethodHandlers<
-                io.grpc.examples.CalculatorOuterClass.CalculatorRequest,
-                io.grpc.examples.CalculatorOuterClass.CalculatorResponse>(
-                  this, METHODID_CALCULATE)))
+                io.grpc.examples.InvoiceOuterClass.InvoiceRequest,
+                io.grpc.examples.InvoiceOuterClass.InvoiceResponse>(
+                  this, METHODID_ISSUE_INVOICE)))
           .build();
     }
   }
 
   /**
    */
-  public static final class CalculatorStub extends io.grpc.stub.AbstractStub<CalculatorStub> {
-    private CalculatorStub(io.grpc.Channel channel) {
+  public static final class InvoiceStub extends io.grpc.stub.AbstractStub<InvoiceStub> {
+    private InvoiceStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private CalculatorStub(io.grpc.Channel channel,
+    private InvoiceStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected CalculatorStub build(io.grpc.Channel channel,
+    protected InvoiceStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new CalculatorStub(channel, callOptions);
+      return new InvoiceStub(channel, callOptions);
     }
 
     /**
      */
-    public void calculate(io.grpc.examples.CalculatorOuterClass.CalculatorRequest request,
-        io.grpc.stub.StreamObserver<io.grpc.examples.CalculatorOuterClass.CalculatorResponse> responseObserver) {
+    public void issueInvoice(io.grpc.examples.InvoiceOuterClass.InvoiceRequest request,
+        io.grpc.stub.StreamObserver<io.grpc.examples.InvoiceOuterClass.InvoiceResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_CALCULATE, getCallOptions()), request, responseObserver);
+          getChannel().newCall(METHOD_ISSUE_INVOICE, getCallOptions()), request, responseObserver);
     }
   }
 
   /**
    */
-  public static final class CalculatorBlockingStub extends io.grpc.stub.AbstractStub<CalculatorBlockingStub> {
-    private CalculatorBlockingStub(io.grpc.Channel channel) {
+  public static final class InvoiceBlockingStub extends io.grpc.stub.AbstractStub<InvoiceBlockingStub> {
+    private InvoiceBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private CalculatorBlockingStub(io.grpc.Channel channel,
+    private InvoiceBlockingStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected CalculatorBlockingStub build(io.grpc.Channel channel,
+    protected InvoiceBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new CalculatorBlockingStub(channel, callOptions);
+      return new InvoiceBlockingStub(channel, callOptions);
     }
 
     /**
      */
-    public io.grpc.examples.CalculatorOuterClass.CalculatorResponse calculate(io.grpc.examples.CalculatorOuterClass.CalculatorRequest request) {
+    public io.grpc.examples.InvoiceOuterClass.InvoiceResponse issueInvoice(io.grpc.examples.InvoiceOuterClass.InvoiceRequest request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_CALCULATE, getCallOptions(), request);
+          getChannel(), METHOD_ISSUE_INVOICE, getCallOptions(), request);
     }
   }
 
   /**
    */
-  public static final class CalculatorFutureStub extends io.grpc.stub.AbstractStub<CalculatorFutureStub> {
-    private CalculatorFutureStub(io.grpc.Channel channel) {
+  public static final class InvoiceFutureStub extends io.grpc.stub.AbstractStub<InvoiceFutureStub> {
+    private InvoiceFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private CalculatorFutureStub(io.grpc.Channel channel,
+    private InvoiceFutureStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected CalculatorFutureStub build(io.grpc.Channel channel,
+    protected InvoiceFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new CalculatorFutureStub(channel, callOptions);
+      return new InvoiceFutureStub(channel, callOptions);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<io.grpc.examples.CalculatorOuterClass.CalculatorResponse> calculate(
-        io.grpc.examples.CalculatorOuterClass.CalculatorRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.examples.InvoiceOuterClass.InvoiceResponse> issueInvoice(
+        io.grpc.examples.InvoiceOuterClass.InvoiceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_CALCULATE, getCallOptions()), request);
+          getChannel().newCall(METHOD_ISSUE_INVOICE, getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_CALCULATE = 0;
+  private static final int METHODID_ISSUE_INVOICE = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CalculatorImplBase serviceImpl;
+    private final InvoiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CalculatorImplBase serviceImpl, int methodId) {
+    MethodHandlers(InvoiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -186,9 +186,9 @@ public final class CalculatorGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_CALCULATE:
-          serviceImpl.calculate((io.grpc.examples.CalculatorOuterClass.CalculatorRequest) request,
-              (io.grpc.stub.StreamObserver<io.grpc.examples.CalculatorOuterClass.CalculatorResponse>) responseObserver);
+        case METHODID_ISSUE_INVOICE:
+          serviceImpl.issueInvoice((io.grpc.examples.InvoiceOuterClass.InvoiceRequest) request,
+              (io.grpc.stub.StreamObserver<io.grpc.examples.InvoiceOuterClass.InvoiceResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -206,10 +206,10 @@ public final class CalculatorGrpc {
     }
   }
 
-  private static final class CalculatorDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
+  private static final class InvoiceDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return io.grpc.examples.CalculatorOuterClass.getDescriptor();
+      return io.grpc.examples.InvoiceOuterClass.getDescriptor();
     }
   }
 
@@ -218,12 +218,12 @@ public final class CalculatorGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (CalculatorGrpc.class) {
+      synchronized (InvoiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new CalculatorDescriptorSupplier())
-              .addMethod(METHOD_CALCULATE)
+              .setSchemaDescriptor(new InvoiceDescriptorSupplier())
+              .addMethod(METHOD_ISSUE_INVOICE)
               .build();
         }
       }
